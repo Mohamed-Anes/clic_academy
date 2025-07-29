@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  /*background-image: url(p2.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;*/
+}
+
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+.div1 {
+  display: grid;
+
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.rechere {
+  grid-column-start: 2;
+  grid-column-end: 10;
+  margin-top: 5%;
+}
+
+/**** box sher*/
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  width: 100%;
+  height: 65px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+#search-button {
+  width: 250px;
+  height: 65px;
+  border: none;
+  outline: none;
+  border-radius: 48px 0 0 48px; /* Seul le bord droit n'a pas de rayon */
+  cursor: pointer;
+  background-color: #0080ff;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  transition: all 0.5s;
+  margin-right: 10px;
+}
+
+#search-results {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* search results */
+
+.dropdown-content {
+  position: relative;
+}
+
+#results {
+  width: 200%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  background-color: white;
+  border: 1px solid #ccc; /* Add a 1px border as the divider */
+  box-sizing: border-box; /* Include the border in the width calculation */
+}
+
+#results a {
+  flex: 0 0 calc(20%);
+  color: #000000;
+  text-decoration: none;
+  font-size: larger;
+  padding: 3px;
+}
+
+#results a :hover {
+  color: red;
+}
+
+/************/
+.zone_profile {
+  border-radius: 8px;
+  grid-column-start: 2;
+  grid-column-end: 12;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+
+  /*
+    box-shadow: 0 0 10px #75baff;
+    border: 1px solid #ffffff;
+    */
+}
+
+.type_recherche {
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  align-items: center;
+  display: block;
+
+  align-items: center;
+  overflow: hidden;
+}
+.ruslt_recher {
+  grid-column-start: 3;
+  grid-column-end: 12;
+
+  border: 1px solid rgb(149, 148, 148);
+  border-radius: 8px;
+  padding: 2cm;
+}
+
+.search-options {
+  display: flex;
+  direction: rtl;
+}
+
+.search-option {
+  margin-top: 10%;
+  width: 250px;
+  height: 65px;
+  margin-right: 15px;
+  background-color: #0080ff;
+  color: #fff;
+  padding: 12px;
+  font-size: 22px;
+  border-radius: 6px;
+  text-align: center;
+  align-items: center;
+}
+
+.search-option.selected {
+  background-color: #00eeff;
+  color: #000000;
+}
+
+/*recher result*/
+.li_class {
+  font-size: 18px;
+  margin-bottom: 5px;
+  direction: rtl;
+}
+/***/
+#word-table {
+  background-color: #fcfffc;
+
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+#word-table th,
+#word-table td {
+  border: 0.5px solid #ebe9e9;
+  padding: 8px;
+  text-align: center;
+}
+
+#word-table th {
+  background-color: #0080ff;
+  color: #fff;
+  width: 150px;
+}
+
+#word-table td {
+  font-size: 14px;
+}
+#word-table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+#word-table tr:hover {
+  background-color: #ddd;
+}
+
+/*****/
+
+/***/
+
+.btn2 {
+  width: 250px;
+  height: 65px;
+  border: none;
+  outline: none;
+  border-radius: 48px;
+  cursor: pointer;
+  background-color: #0080ff;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  transition: all 0.5s;
+}
+
+.btn2.transparent {
+  margin: 0;
+  background: none;
+  border: 2px solid #fff;
+
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.title2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+#validation-button {
+  margin-top: 40%;
+  margin-bottom: 10px;
+  width: 250px;
+  height: 65px;
+  margin-right: 5px;
+
+  color: #fff;
+  padding: 8px;
+  font-size: 25px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #45a049;
+  cursor: pointer;
+}
+
+#validation-button ::selection {
+  background-color: #bcbcbc;
+}
+
+/****/
+.edit-icon {
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.mylog h1 {
+  position: fixed;
+  top: 30px;
+  left: 6%;
+}
+.mylog img {
+  position: fixed;
+  top: 72px;
+  left: 80px;
+}
+
+/****/ /* Styles CSS pour la barre de navigation */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 20px;
+}
+
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1e67c5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.navbar li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+ul.navbar li a:hover {
+  background-color: #113b70;
+}
+
+ul.navbar li.logout {
+  order: -1;
+}
+
+ul.navbar li.user-info {
+  display: flex;
+  color: rgb(255, 255, 255);
+  align-items: center;
+  margin-right: auto; /* Utilisation de "auto" pour centrer les éléments à droite */
+  margin-left: 10px; /* Ajouter une marge gauche pour l'espacement */
+}
+
+ul.navbar li.user-info span {
+  margin-left: 5px;
+}
+
+/******************/

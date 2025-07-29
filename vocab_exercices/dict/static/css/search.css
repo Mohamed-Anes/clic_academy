@@ -1,0 +1,77 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color: rgb(158, 158, 158);
+  display: flex;
+  justify-content: right;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: rgb(42, 42, 42);
+  font-weight: bolder;
+  font-size: large;
+  margin: 1%;
+}
+
+.search-container {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(138, 138, 138);
+  padding-bottom: 2%;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-box * {
+  /* margin-left: 1%; */
+  width: fit-content;
+}
+
+#searchResults {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: rgb(192, 192, 192);
+}
+
+#searchResults a {
+  text-align: center;
+  text-decoration: none;
+  color: rgb(42, 42, 42);
+}
+
+/* Pagination */
+.results-container {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  background-color: #ddd;
+  border: 1px solid #999;
+}
+#paginate {
+  display: inline-block;
+}
+.page-link {
+  margin: 10px;
+  font-size: 22px;
+  padding: 4px;
+}
+.page-link a {
+  text-decoration: none;
+}
+
+.next-link {
+  display: inline-block;
+}

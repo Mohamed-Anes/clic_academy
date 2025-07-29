@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/search.css' %}" />
+
+    <title>dictionnaire</title>
+
+    <script>
+        {% if result is not None %}
+        var search_result = {
+            result: "{{ result }}",
+            definitions: [
+                {% for c in definitions %}
+            `{{ c }}`,
+            {% endfor %}
+            ],
+        synonymes: ["{{ synonymes }}"],
+            antonymes: ["{{ antonymes }}"],
+                examples: [
+                    {% for c in examples %}
+        `{{ c }}`,
+            {% endfor %}
+            ],
+        conjugaison: [
+            {% for c in conjugaison %}
+        `{{ c }}`,
+            {% endfor %}
+          ],
+          }
+        {% else %}
+        var search_result = {}
+        {% endif %}
+
+        console.log(search_result)
+    </script>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">الصفحة الرئيسية</a>
+    </div>
+
+    <div class="search-container">
+        <h3>يمكنك البحث عن كلمة في القاموس للتأكد منها</h3>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="ابحث عن كلمة ..." />
+            <!-- search level range, from 1 to 18 -->
+            <div>
+                مستوى بداية البحث
+                <input type="number" name="search-range" id="start" value="1" min="1" max="18">
+            </div>
+            <div>
+                مستوى نهاية البحث
+                <input type="number" name="search-range" id="end" value="18" max="18" min="1">
+            </div>
+            <!-- whether searching for a lemma or a word -->
+            <div>
+                مصدر
+                <input type="radio" name="lem-mot" id="lem" value="lem" checked>
+                كلمة
+                <input type="radio" name="lem-mot" id="mot" value="mot">
+            </div>
+
+            <div>
+                <button id="search-button">بحث</button>
+            </div>
+        </div>
+        <div id="search-results"></div>
+    </div>
+
+
+
+    <h4>نتائج البحث</h4>
+    <!-- <div id="results">
+    </div> -->
+
+    <div class="results-container">
+
+        <div>
+            <input type="button" value="previous" id="previous-page" disabled>
+            <div id="paginate">
+                <select name="pages" id="page-select" hidden>
+                </select>
+            </div>
+            <input type="button" value="next" id="next-page">
+
+        </div>
+
+        <div>
+            <div id="searchResults">
+
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="{% static 'js/pagination.js' %}"></script>
+    <script type="module" src="{% static 'js/search.js' %}"></script>
+</body>
+
+</html>

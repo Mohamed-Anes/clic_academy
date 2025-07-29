@@ -1,0 +1,142 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html dir='rtl'>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'css/dict.css' %}" />
+  <title>dictionnaire</title>
+
+  <script>
+        {% if result is not None %}
+        var search_result = {
+            result: "{{ result }}",
+            definitions: [
+              {% for c in definitions %}
+               `{{ c }}`,
+              {% endfor %}
+              ],
+            synonymes: ["{{ synonymes }}"],
+            antonymes: ["{{ antonymes }}"],
+            examples: [
+              {% for c in examples %}
+                `{{ c }}`,
+              {% endfor %}
+              ],
+            conjugaison: [
+            {% for c in conjugaison %}
+              `{{ c }}`,
+            {% endfor %}
+            ],
+            }
+        {% else %}
+        var search_result = {}
+        {% endif %}
+
+        console.log(search_result)
+
+    
+  </script>
+
+</head>
+
+<body>
+  <header>
+    <ul class="navbar">
+      <li><a href="{% url 'exo1' %}">تمرين</a></li>
+      <li><a href= "{% url 'etudiant' %}">الصفحة الرئيسية</a></li>
+
+
+      <li class="user-info">
+        <span ><a href="{% url 'profile' %}">
+          اسم المستخدم
+        </a>
+        </span>
+      </li>
+      <li class="logout"><a href="{% url 'log_in' %}"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+    </ul>
+  </header>
+  <div class="div1">
+    <div class="rechere">
+      {% comment %} <div class="search-box">
+        <input type="text" id="search-input" placeholder="ابحث عن كلمة ..." />
+        <button id="search-button">البحث في مستواي </button>
+        <button id="search-button1">البحث في كل القاموس </button>
+      </div>
+      <div id="search-results"></div> {% endcomment %}
+      <div class="search-box">
+        <h3>يمكنك البحث عن كلمة في القاموس للتأكد منها </h3>
+        <div class="dropdown">
+            <input type="text" id="search-input" placeholder="ابحث عن كلمة ..." />
+            <div id="myDropdown" class="dropdown-content">
+                <div id="results">
+                </div>
+            </div>
+        </div>
+        <button id="search-button">البحث في مستواي </button>
+        <button id="search-button1">البحث في كل القاموس </button>
+    </div>
+    <div id="search-results"></div>
+
+    </div>
+    <dev class="gotologin" id="gotologi">
+      <h2 class="title2">
+        هل تريد اكتشاف كلمات جديدة مقترحة لمستواك من اجل تطوير إمكانياتك
+      </h2>
+      <button class="btn2 transparent" onclick="toggleDiv()" id="sign-up-btn">قائمة كلمات مستواي</button>
+    </dev>
+    <div class="devlistmot" id="myDiv">
+      <h1 class="title1">قائمة كلمات مستواي</h1>
+
+      <table class="tablelistmot">
+        <tr>
+        {% for item in list_mots_niv %}
+            <td><a href="?id={{item.id}}">{{ item.lemme }}</a></td>
+            {% cycle '' '' '' '</tr><tr>' %}
+        {% endfor %}
+        </tr>
+      </table>
+    </div>
+    <div class="zone_profile">
+      <div class="type_recherche">
+        <div class="search-option" onclick="getdefinition()" data-value="definition">التعريف</div>
+        <div class="search-option" onclick="getsynonim()" data-value="synonymes">المرادفات</div>
+        <div class="search-option" onclick="getantonim()" data-value="antonymes">العكس</div>
+        <div class="search-option" onclick="getexemple()" data-value="exemples">الأمثلة</div>
+        <div class="search-option" onclick="getconjugaison()" data-value="conjugaison">التصريف</div>
+
+      </div>
+      <dev class="ruslt_recher">
+        {% comment %} <table id="word-table">
+          <tr>
+            <th>الضمائر</th>
+            <th>الماضي المعلوم</th>
+            <th>المضارع المعلوم</th>
+            <th>الأمر</th>
+            <th>الماضي المجهول</th>
+            <th>المضارع المجزوم</th>
+            <th>المضارع المنصوب</th>
+            <th>المضارع المجهول</th>
+          </tr>
+
+        </table> {% endcomment %}
+
+
+
+        <ul id="maListe" class="scrollable-list">
+
+        </ul>
+      </dev>
+      </dev>
+      
+
+
+
+
+      <script src="{% static 'js/dict.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir='rtl'>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+  <title>profile</title>`
+
+</head>
+
+<body>
+  <header>
+    <ul class="navbar">
+      <li><a href="{% url 'exo3' %}">تمرين</a></li>
+      <li><a href="{% url 'dict' %}">القاموس</a></li>
+      <li><a href="{% url 'etudiant' %}">الصفحة الرئيسية</a></li>
+
+
+      <li class="user-info">
+        <span ><a href="{% url 'profile' %}">
+          اسم المستخدم
+        </a>
+        </span>
+      </li>
+      <li class="logout"><a href="{% url 'log_in' %}"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+    </ul>
+  </header>
+  <dev class="mylog">
+    <h1 class="mylog">اقرأ</h1>
+    <img src="{% static 'image/mylog.png' %}" style="width: 100px;height: 100px;">
+</dev>
+  <div class="container">
+    <div class="div1">
+      <div class="zone_profile">
+
+        <div class="photo">
+          <div class="profile-pic">
+            <img src="{% static 'image/profile2.png' %}">
+          </div>
+        </div>
+       
+        <dev class="information">
+          <div class="profile">
+            <h1>المعلومات الشخصية</h1>
+            <ul>
+              <li><strong>اسم المستخدم:</strong> abdo123</li>
+              <li><strong>الاسم:</strong>عبدالله</li>
+              <li><strong>الاسم الأول:</strong> جين</li>
+              <li><strong>العمر:</strong> 30 سنة</li>
+              <li><strong>البريد الإلكتروني:</strong> Abdallah.d0@gmail.com</li>
+              <li><strong>المستوى:</strong> متقدم</li>
+            </ul>
+          </div>
+        </dev>
+
+      
+        <dev class="divsvg bar_prog">
+ 
+          <svg>
+s
+            <circle r="70px"></circle>
+
+            <circle r="70px"></circle>
+
+          </svg>
+          <dev class="niveau_pro">
+            <h1>المستوى 7 : </h1>
+            <h2>67%</h2>
+          </dev>
+        </dev>
+   
+      </div>
+      <dev class="zone_nbmot">
+        <h1>عدد الكلمات التي تعلمتها: </h1>
+        <h2>36021</h1>
+      </dev>
+      <h1 class="titre_archife">  ارشيف التمارين  : </h1>
+
+      
+      <dev  class="teble_res">
+        
+        <table>
+          <thead>
+            <tr>
+              <th>نوع التمرين</th>
+              <th>الكلمة</th>
+              <th>الإجابة</th>
+              <th>التاريخ</th>
+              <th>المستوى</th>
+              
+            </tr>
+            
+          </thead>
+          <tbody>
+            <tr>
+              <td>تمرين ١</td>
+              <td>قطة</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>17</td>
+              
+            </tr>
+            <tr>
+ 
+            <tr>
+              <td>تمرين ٢</td>
+              <td>كلب</td>
+             
+              <td>غير صحيح</td>
+              <td>17/05/2023</td>
+              <td>17</td>
+              
+            </tr>
+            <tr>
+              <td>تمرين ٣</td>
+              <td>منزل</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>تمرين ٣</td>
+              <td>منزل</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>تمرين ٣</td>
+              <td>منزل</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>تمرين ٣</td>
+              <td>منزل</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>تمرين ٣</td>
+              <td>منزل</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>تمرين ٣</td>
+              <td>منزل</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>تمرين ٣</td>
+              <td>منزل</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>تمرين ٣</td>
+              <td>منزل</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>تمرين ٣</td>
+              <td>منزل</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>تمرين ٣</td>
+              <td>منزل</td>
+              <td>صحيح</td>
+              <td>17/05/2023</td>
+              <td>13</td>
+            </tr>
+        
+          </tbody>
+        </table>
+
+      </dev>
+
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+  <script src="{% static 'js/profile.js' %}"></script>
+</body>
+
+</html>

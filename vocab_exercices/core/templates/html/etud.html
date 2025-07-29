@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir='rtl'>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{%static 'css/etud.css'%}" />
+    <title>etudaint</title>`
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    <dev class="mylog">
+        <h1 class="mylog">اقرأ</h1>
+        <img src="{%static 'image/mylog.png'%}" style="width: 150px;height: 150px;">
+    </dev>
+    <header>
+        <ul class="navbar">
+            <li><a href="{% url 'exo2' %}">تمرين</a></li>
+            <li><a href="{% url 'dict' %}">القاموس</a></li>
+          <li><a href="{% url 'etudiant' %}">الصفحة الرئيسية</a></li>
+     
+          
+          <li class="user-info">  
+            
+          
+            <span ><a href="{% url 'profile' %}">
+              اسم المستخدم
+            </a>
+            </span>
+
+          </li>
+        
+          <li class="logout"><a href="{% url 'log_in' %}"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+      </header>
+    <div class="div1">
+    
+        <dev class="gotologin">
+
+                <h2 class="title2">
+                    اهلا محمد لقد حان وقت تطوير 
+                    امكانياتك معنا 
+                </h2>
+                
+
+        </dev>
+        <dev class="divsvg_exo" id="etud_exo">
+            <img src="{%static 'image/exo2.png'%}" style="width: 100px ;height:100px;">
+            <h1 class="titre_bon">التمارين</h1>
+            <h3 class="describtion_bon">
+                قم بحل التمارين وارفع مستواك
+            </h3>
+        </dev>
+        <dev class="divsvg_dict" id="etud_dict">
+          <img src="{%static 'image/dict2.png'%}" style="width: 100px ;height:100px;">
+          <h1 class="titre_bon">قاموس</h1>
+          <h3 class="describtion_bon">
+            لا تتردد في كتابة الكلمة التي تود البحث عنها في قاموسنا واستكشاف الميزات المختلفة المتاحة لكل كلمة.
+          </h3>
+        </dev>
+        <dev class="divsvg_profilet" id="etud_profil">
+            <img src="{%static 'image/profile.png'%}" style="width: 100px ;height:100px;">
+            <h1 class="titre_bon">الملف الشخصي</h1>
+            <h3 class="describtion_bon">
+                يمكنك رؤية ملف التعريف الخاص بك الذي يحتوي على أرشيف لتقدمك </h3>
+            </dev>
+ 
+
+          </dev>
+
+        </div>
+
+ 
+     
+       
+          
+
+      
+
+        <script src="{%static 'js/etud.js'%}"></script>
+</body>
+
+</html>

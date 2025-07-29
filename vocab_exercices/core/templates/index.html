@@ -1,0 +1,140 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="art">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+   src="https://kit.fontawesome.com/64d58efce2.js"
+   crossorigin="anonymous"
+  ></script>
+  
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <title>login</title>`
+  
+ </head>
+
+ <body>
+  <div class="container">
+   <div class="forms-container">
+   
+    <div class="signin-signup">
+      
+     <form action="#" method='post' class="sign-in-form">
+
+        {% csrf_token %}
+
+      <h2 class="title">تسجيل الدخول</h2>
+
+
+      <div class="input-field">
+       <i class="fas fa-user"></i>
+       {% comment %} <input type="text" placeholder="اسم المستخدم" /> {% endcomment %}
+       {{ login_form.username }}
+      </div>
+      <div class="input-field">
+       <i class="fas fa-lock"></i>
+       {% comment %} <input type="password" placeholder="كلمة المرور" /> {% endcomment %}
+       {{ login_form.password }}
+      </div>
+      {% comment %} <input class="btn solid" type="submit" value="تسجيل الدخول" /> {% endcomment %}
+      <button class="btn solid" type="submit">تسجيل الدخول</button>
+
+      <p class="social-text">تابعنا وكن جزءًا من رحلة التعلم والإبداع</p>
+        
+        
+        
+      <div class="social-media">
+       <a href="#" class="social-icon">
+        <i class="fab fa-facebook-f"></i>
+       </a>
+       <a href="#" class="social-icon">
+        <i class="fab fa-twitter"></i>
+       </a>
+       <a href="#" class="social-icon">
+        <i class="fab fa-google"></i>
+       </a>
+       <a href="#" class="social-icon">
+        <i class="fab fa-linkedin-in"></i>
+       </a>
+      </div>
+     </form>
+     <form action="#" class="sign-up-form">
+      <h2 class="title">انضم إلينا</h2>
+      
+      <dev  class="r1">
+        <input type="radio" id="etudiant" name="role" value="etudiant" />
+        <label for="etudiant">طالب</label>
+  
+        <input type="radio" id="professeur" name="role" value="professeur" />
+        <label for="professeur">أستاذ</label>
+      </dev>
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="الاسم الأول" />
+      </div>
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="الاسم الأخير" />
+      </div>
+      <div class="input-field">
+        <i class="fas bx-fast-forward"></i>
+        <input type="date" placeholder="تاريخ الميلاد" />
+      </div>
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="اسم المستخدم" id="username"/>
+      </div>
+      <div class="input-field">
+        <i class="fas fa-envelope"></i>
+        <input type="email" placeholder="البريد الإلكتروني" />
+      </div>
+      <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="كلمة المرور" id="password" />
+      </div>
+      <div class="input-field" id="niveau-field" style="display: none;">
+        <i class="fas fa-book"></i>
+        <input type="number" placeholder="المستوى" min="1" max="17" oninvalid="setCustomValidity('يرجى إدخال قيمة صحيحة بين 1 و 17')" oninput="setCustomValidity('')" />
+        <h5 style="margin-bottom: 5px;">اختر مستوى بين 0 و 17 حيث المستوى 17 هو الاسهل</h5>
+      </div>
+      <input type="submit" class="btn" value="تسجيل الدخول" />
+    </form>
+    
+    </div>
+   </div>
+
+   <div class="panels-container">
+    <div class="panel left-panel">
+     <div class="content">
+      <h1>اقرأ</h1>
+      <img src="{% static 'image/mylog.png' %}" style="width: 120px;height: 120px;">
+      <h1 class="titre3">جديد هنا؟</h1>
+      <h2 class="title2"> 
+        انضم إلى مجتمعنا التعليمي وشارك في اكتشاف قوتك وتطوير إمكانياتك مع فريقنا
+      </h2>
+      <button class="btn transparent" id="sign-up-btn">انضم إلينا</button>
+     </div>
+     <img src="{% static 'svg/log.svg' %}" class="image" alt="" />
+    </div>
+    <div class="panel right-panel">
+     <div class="content">
+      <h1>اقراء</h1>
+      <img src="{% static 'image/mylog.png' %}" style="width: 100px;height: 100px;">
+      <h2 class="title2"> بقدرة العقل وتوجيه القلم ، نصنع تاريخنا</h2>
+      <button class="btn transparent" id="sign-in-btn">  ابدا بالتعلم </button>
+     </div>
+     <img src="{% static 'svg/log.svg' %}" class="image" alt="A picture here"/>
+    </div>
+   </div>
+  </div>
+  <script src="{% static 'js/app.js' %}"></script>
+ </body>
+
+
+
+
+
+</html>

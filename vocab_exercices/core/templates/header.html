@@ -1,0 +1,22 @@
+<div class="nav_container">
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="{% url 'test_profile' %}">Personal page</a>
+      </li>
+      <li>
+        {% comment %} <a href="{% url 'search' 0 %}">Dictionary</a> {% endcomment %}
+      </li>
+      <li>
+        {% comment %} <a href="{% url 'exercise_list' %}">Exercices</a> {% endcomment %}
+      </li>
+    </ul>
+    {% if request.user.is_authenticated %}
+        <p>Welcome, {{ request.user.username }}!</p>
+        <p>Email: {{ request.user.email }}</p>
+    {% else %}
+        <p>Guest User</p>
+    {% endif %}
+
+  </nav>
+</div>

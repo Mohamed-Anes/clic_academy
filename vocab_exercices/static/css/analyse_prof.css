@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  overflow-x: hidden;
+  background-image: url( "../image/p2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+body,
+input {
+  font-family: 'Poppins', sans-serif;
+}
+
+.div1 {
+    display: grid;
+    
+    grid-template-columns: repeat(15, 1fr);
+  }
+
+  
+.titre {
+    grid-column-start:2 ;
+    grid-column-end: 12;
+    grid-row-start: 1;
+    font-size: 1.8rem;
+    color:  #000000;
+   
+    margin-top: 5%;
+    }
+    
+
+  .gettext{
+    background-color: #ffffff00;
+    grid-column-start:2;
+    grid-column-end: 8;
+    margin-top: 5%;
+    margin-right: 10px;
+    
+  }
+
+  .zone_profile {
+    background-color: rgba(255, 255, 255, 0);
+    grid-column-start: 2;
+    grid-column-end:8 ;
+    margin-right: 10px;
+    margin-top: 5%;
+    margin-left: 10px;
+   
+  }
+
+
+.r{
+   
+    background-color: #ffffff;
+    grid-column-start:2;
+    grid-column-end:8 ;
+    
+}
+
+
+
+
+  
+  
+
+  /**** box sher*/
+
+  
+ .large-textarea {
+    width: 100%;
+    height: 300px;
+ 
+    border: 1px solid #a6a6a6;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+
+  .testres {
+
+    width: 100%;
+    height: 300px;
+   
+    border: 1px solid #dddada;
+    border-radius: 8px;
+    overflow: auto;
+    font-size: 18px;
+    align-items:center;
+  
+    background-color: #faf9f9;
+  
+}
+  
+
+      
+
+
+
+
+
+  /*recher result*/
+
+
+.title2 {
+
+  font-size: 2.0rem;
+  color:  #fff;
+    margin-top: 20%;
+
+  
+}
+.titre3 {
+    grid-column-start:2 ;
+    grid-column-end: 12;
+    grid-row-start: 1;
+    font-size: 1.8rem;
+    color:  #000000;
+     
+    margin-top: 6%;
+    }
+
+  table {
+    margin-top: 2%;
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 20px;
+  }
+    th, td {
+      border: 1px solid rgb(225, 225, 225);
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+       background-color: #0080FF;
+       color: #fff;
+    }
+    table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+
+
+
+/**/
+
+.mylog h1{
+  position: fixed;
+   top:10%;
+   left:15%;
+  color: #fff;
+
+ }
+ .mylog img{
+   position: fixed;
+   top:16%;
+   left: 11%;
+  
+
+
+
+ }
+
+ 
+ /****//* Styles CSS pour la barre de navigation */
+ header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 20px;
+  
+}
+
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#1e67c5 ;
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.navbar li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+ul.navbar li a:hover {
+  background-color: #113b70;
+}
+
+ul.navbar li.logout {
+  order: -1;
+}
+
+ul.navbar li.user-info {
+  display: flex;
+  color: rgb(255, 255, 255);
+  align-items: center;
+  margin-right: auto; /* Utilisation de "auto" pour centrer les éléments à droite */
+  margin-left: 10px; /* Ajouter une marge gauche pour l'espacement */
+}
+
+ul.navbar li.user-info span {
+  margin-left: 5px;
+}
+
+/******************/

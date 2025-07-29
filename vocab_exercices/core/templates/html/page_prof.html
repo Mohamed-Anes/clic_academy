@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir='rtl'>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/page_prof.css' %}" />
+    <title>prof page</title>`
+
+</head>
+
+<body>
+    <header>
+        <ul class="navbar">
+            <li><a href="{% url 'analyse_prof' %}">تحليل النص</a></li>
+          <li><a href="{% url 'dicte_prof' %}">القاموس</a></li>
+          <li><a href="{% url 'page_prof' %}">الصفحة الرئيسية</a></li>
+     
+          
+          <li class="user-info">  
+            
+          
+            <span >اسم المستخدم</span>
+          </li>
+        
+          <li class="logout"><a href="{% url 'log_in' %}"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+      </header>
+    <dev class="mylog">
+        <h1 class="mylog">اقرأ</h1>
+        <img src="{% static 'image/mylog.png' %}" style="width: 150px;height: 150px;">
+    </dev>
+    <div class="div1">
+
+        <dev class="gotologin">
+            <div class="zone_profile">
+
+                <div class="photo">
+                    <div class="profile-pic">
+                        <img src="{% static 'image/profile2.png' %}">
+                    </div>
+                </div>
+
+                <dev class="information">
+                    <div class="profile">
+                        <ul>
+                            <li><strong>اسم المستخدم:</strong> mohammed123</li>
+                            <li><strong>الاسم:</strong>محمد</li>
+                            <li><strong>الاسم الأول:</strong> جين</li>
+                            <li><strong>العمر:</strong> 30 سنة</li>
+                            <li><strong>البريد الإلكتروني:</strong> mohammed.doe@gmail.com</li>
+
+                        </ul>
+                    </div>
+                </dev>
+
+
+        </dev>
+
+    </div>
+
+
+    </dev>
+
+    <dev class="divsvg_dict">
+        <img src="{% static 'image/dict2.png' %}" style="width: 100px ;height:100px;">
+        <h1 class="titre_bon">قاموس</h1>
+        <h3 class="describtion_bon">
+            ,لا تتردد في كتابة الكلمة التي تود البحث عنها في قاموسنا واستكشاف الميزات المختلفة المتاحة لكل كلمة
+            كما يمكنك رؤية الكلمات من كل مستوى
+        </h3>
+    </dev>
+    <dev class="divsvg_profilet">
+        <img src="{% static 'image/analyse.png' %}" style="width: 100px ;height:100px;">
+        <h1 class="titre_bon">تحليل النص </h1>
+        <h3 class="describtion_bon">
+            بإمكانكم تحليل أي نص وتحديد مستوى صعوبته، وعلى أي مستوى يمكنك أن تقدمه.
+    </dev>
+
+
+    </dev>
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="{% static 'js/page_prof.js' %}"></script>
+</body>
+
+</html>

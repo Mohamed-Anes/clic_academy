@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir='rtl'>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/etudaint-exo4.css' %}" />
+    <title>etudaint</title>`
+
+</head>
+
+<body>
+  <header>
+    <ul class="navbar">
+   
+      <li><a href="{% url 'dict' %}">القاموس</a></li>
+      <li><a href="{% url 'etudiant' %}">الصفحة الرئيسية</a></li>
+
+
+      <li class="user-info">
+        <span ><a href="{% url 'profile' %}">
+            اسم المستخدم
+          </a>
+          </span>
+      </li>
+      <li class="logout"><a href="{% url 'log_in' %}"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+    </ul>
+  </header>
+    <div class="div1">
+    
+        <dev class="gotologin">
+
+                <h2 class="title2">
+                    اهلا محمد لقد حان وقت تطوير 
+                    امكانياتك معنا 
+                </h2>
+                
+
+        </dev>
+        <dev class="divsvg_exo">
+            <img src="{% static 'image/exo2.png' %}" style="width: 100px ;height:100px;">
+            <h1 class="titre_bon">  تصريف الأفعال </h1>
+
+            <dev class="phrase">
+                <h1> صرف الفعل قال في المضارع </h1>
+            </dev>
+        <dev class="choix">
+           
+            
+          <table class="tablec">
+
+            <tr>
+              <td>أنا</td>
+              <td contenteditable="true">.......</td>
+            </tr>
+            <tr>
+              <td>أنتَ</td>
+              <td contenteditable="true">.......</td>
+            </tr>
+            <tr>
+              <td>هو</td>
+              <td contenteditable="true">.......</td>
+            </tr>
+            <tr>
+              <td>هي</td>
+              <td contenteditable="true">.......</td>
+            </tr>
+            <tr>
+              <td>نحن</td>
+              <td contenteditable="true">.......</td>
+            </tr>
+            <tr>
+              <td>أنتُم</td>
+              <td contenteditable="true">.......</td>
+            </tr>
+            <tr>
+              <td >هم</td>
+              <td contenteditable="true">.......</td>
+            </tr>
+          </table>
+          
+              
+
+            
+        </dev>
+        <dev class="next">
+            <h2>
+                التالي
+            </h2>
+            </dev>
+            <dev class="valide">
+                <h2>تحقق من صحة الإجابة</h2>
+            </dev>
+    
+            <h3 class="hh3">إذا تم تخطي أحد التمارين ، فسيتم تقديم هذا التمرين لاحقًا على هذا المستوى.</h3>
+       
+        
+
+
+ 
+
+          </dev>
+
+        </div>
+
+ 
+     
+       
+          
+
+
+
+        <script src="{% static 'js/etudaint-exo4.js' %}"></script>
+</body>
+
+</html>

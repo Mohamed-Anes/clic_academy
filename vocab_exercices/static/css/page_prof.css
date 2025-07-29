@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  overflow-x: hidden;
+  background-image: url("../image/p2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+body,
+input {
+  font-family: 'Poppins', sans-serif;
+}
+
+.div1 {
+    display: grid;
+    
+    grid-template-columns: repeat(15, 1fr);
+  }
+
+  .divsvg_dict{
+
+    grid-column-start:5 ;
+    grid-column-end: 7;
+    grid-row-start: 3;
+    width: 95%;
+    height: 370px;
+    margin-right:20px ;
+    border-radius: 8px;
+    background-color:#0797aa;
+  /*  box-shadow: 2px 2px 4px 3px #17d240;*/
+  }
+
+  .divsvg_dict img{
+  
+    align-items: center;
+    margin-right: 25%;
+    margin-top: 10%;
+  }
+  .divsvg_dict h1{
+
+    font-size: 2.0rem;
+    color:  #ffffff;
+    text-align: center;
+    margin-top: 2%;
+
+
+
+  }
+
+.divsvg_dict h3{
+
+    font-size: 1.0rem;
+    color:  #e9e9e9;
+    text-align: center;
+    
+    margin: 10%;
+
+
+}
+
+
+
+
+/***exo*/
+
+.divsvg_profilet{
+
+    grid-column-start:3 ;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    width: 95%;
+    height: 370px;
+   
+    border-radius: 8px;
+    background-color:#f33636;
+  /*  box-shadow: 2px 2px 4px 3px #17d240;*/
+  }
+
+  .divsvg_profilet img{
+  
+    align-items: center;
+    margin-right: 25%;
+    margin-top: 10%;
+  }
+  .divsvg_profilet h1{
+
+    font-size: 2.0rem;
+    color:  #ffffff;
+    text-align: center;
+    margin-top: 2%;
+
+
+
+  }
+
+.divsvg_profilet h3{
+
+    font-size: 1.0rem;
+    color:  #e6e6e6;
+    text-align: center;
+    
+    margin: 10%;
+
+
+}
+/*********/
+  .gotologin{
+
+    grid-column-start: 10;
+    grid-column-end: 14;
+    margin-top: 5%;
+    text-align: center;
+  }
+
+  .title2 {
+
+    font-size: 4.0rem;
+    color:  #ffffff;
+    
+    
+  }
+
+  .mylog {
+    font-size: 2.0rem;
+    color:  #080808;
+ 
+    
+
+  }
+
+  .mylog h1{
+   position: fixed;
+    top:10%;
+    right: 26%;
+    margin-left: 8px;
+
+  }
+  .mylog img{
+    position: fixed;
+    top:15%;
+    right: 23%;
+   
+
+
+  }
+
+  /**********
+  /*********/
+  .information{
+    grid-column-start: 4;
+    grid-column-end: 9;
+    background-color: #ffffff;
+    display: flex;
+    height: 90%;
+   
+    margin-top: 10px;
+  
+  }
+  .zone_profile {
+    background-color: #fff;
+    grid-column-start: 8;
+    grid-column-end: 17;
+
+    
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    border-radius: 8px;
+    box-shadow: 0 0 10px #e0e0e0dc;
+    overflow: hidden;
+  }
+  .profile-pic img {
+    margin: 5px;
+    padding: 5px;
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px #0080FF;
+   
+  }  
+  .photo{
+    padding: 5%;
+    background-color: #ffffff;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: flex;
+    height: 90%;
+   
+    margin-top: 10px;
+  }
+  
+  /***/
+  .profile {
+    max-width: 80%;
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+   
+    margin-top: 10%;
+  }
+  
+  .profile h1 {
+    text-align: right;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  .profile ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .profile li {
+    margin-bottom: 10px;
+    
+  }
+  
+  .profile strong {
+    margin-left: 8px;
+    font-weight: bold;
+    
+  }
+  
+/***********/
+  /******/
+   /****//* Styles CSS pour la barre de navigation */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 20px;
+  
+}
+
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#1e67c5 ;
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.navbar li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+ul.navbar li a:hover {
+  background-color: #113b70;
+}
+
+ul.navbar li.logout {
+  order: -1;
+}
+
+ul.navbar li.user-info {
+  display: flex;
+  color: rgb(255, 255, 255);
+  align-items: center;
+  margin-right: auto; /* Utilisation de "auto" pour centrer les éléments à droite */
+  margin-left: 10px; /* Ajouter une marge gauche pour l'espacement */
+}
+
+ul.navbar li.user-info span {
+  margin-left: 5px;
+}
+
+/******************/

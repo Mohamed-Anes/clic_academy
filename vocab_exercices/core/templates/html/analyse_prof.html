@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir='rtl'>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"  href="{%static 'css/analyse_prof.css'%}" />
+    <title>test du text</title>`
+
+</head>
+
+<body>
+    <header>
+        <ul class="navbar">
+            <li><a href="{% url 'dicte_prof' %}">قاموس</a></li>
+          <li><a href="{% url 'page_prof' %}">الصفحة الرئيسية</a></li>
+     
+          
+          <li class="user-info">  
+            
+          
+            <span >اسم المستخدم</span>
+          </li>
+        
+          <li class="logout"><a href="{% url 'log_in' %}"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+        </ul>
+      </header>
+    <dev class="mylog">
+        <h1 class="mylog">اقرأ</h1>
+        <img src="{% static 'image/mylog.png' %}" style="width: 200px;height: 200px;">
+    </dev>
+    <div class="div1">
+        <h1 class="titre">يمكنك تحليل مستوى صعوبة النص الخاص بك هنا ،
+            جرب الان ..
+        </h1>
+
+
+        <div class="gettext">
+
+            <textarea id="input-text" class="large-textarea" placeholder="أدخل النص هنا ...."></textarea>
+        </div>
+
+
+        <dev class="r">
+            <h1 class="titre3">تحليل النص حسب الكلمات في كل مستوى:</h1>
+            <table>
+                <table>
+                    <tr>
+                        <th>المستوى</th>
+                        <th>النسبة المئوية</th>
+                        <th>عدد الكلمات</th>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>50%</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>20%</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>15%</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>15%</td>
+                        <td>300</td>
+                    </tr>
+                </table>
+        </dev>
+
+        <div class="zone_profile">
+            <dev class="remarque">
+                <p id="remarque" class="testres"></p>
+            </dev>
+            </dev>
+     </div>
+
+
+
+        <script>
+            function analyseText() {
+                var inputText = document.getElementById("input-text").value;
+                var words = inputText.split(" ");
+                var outputText = "";
+
+                for (var i = 0; i < words.length; i++) {
+                    var randomColor = getRandomColor();
+                    var coloredWord = '<span style="color: ' + randomColor + '">' + words[i] + '</span>';
+                    outputText += coloredWord + " ";
+                }
+
+                document.getElementById("remarque").innerHTML = outputText.trim();
+            }
+
+            function getRandomColor() {
+                var colors = ["#000000;", "#0080FF","#0080FF","#0080FF","#0080FF"];
+                var randomIndex = Math.floor(Math.random() * colors.length);
+                return colors[randomIndex];
+            }
+
+
+
+            function maFonction(event) {
+                if (event.keyCode === 13) {
+                    // Votre code ici
+                    console.log("La touche Entrée a été enfoncée !");
+                    analyseText()
+                }
+            }
+
+            var input = document.getElementById("input-text");
+            // Ajout d'un écouteur d'événement sur le keydown
+            input.addEventListener("keydown", maFonction);
+        </script>
+
+
+
+
+
+        <script src="{% static 'js/analyse_prof.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html dir='rtl'>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/dict_prof.css' %}" />
+    <title>dictionnaire</title>`
+
+</head>
+
+
+<body>
+  <header>
+    <ul class="navbar">
+        <li><a href="{% url 'analyse_prof' %}">تحليل النص</a></li>
+      <li><a href="{% url 'page_prof' %}">الصفحة الرئيسية</a></li>
+ 
+      
+      <li class="user-info">  
+        
+      
+        <span >اسم المستخدم</span>
+      </li>
+    
+      <li class="logout"><a href="{% url 'profile' %}"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a></li>
+    </ul>
+  </header>
+    <div class="div1">
+        <div class="rechere">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="ابحث عن كلمة ..." />
+              
+                <button id="search-button1">البحث في كل القاموس </button>
+            </div>
+            <div id="search-results"></div>
+
+        </div>
+
+    
+    <div class="zone_profile">
+        <div class="type_recherche">
+            <div class="search-option" onclick="getdefinition()" data-value="definition">التعريف</div>
+            <div class="search-option" onclick="getsynonim()" data-value="synonymes">المرادفات</div>
+            <div class="search-option" onclick="getantonim()" data-value="antonymes">العكس</div>
+            <div class="search-option" onclick="getexemple()" data-value="exemples">الأمثلة</div>
+            <div class="search-option" onclick="getconjugaison()" data-value="conjugaison">التصريف</div>
+
+        </div>
+    
+        <dev class="ruslt_recher">
+            <table id="word-table">
+                <tr>
+                    <th>الضمائر</th>
+                    <th>الماضي المعلوم</th>
+                    <th>المضارع المعلوم</th>
+                    <th>الأمر</th>
+                    <th>الماضي المجهول</th>
+                    <th>المضارع المجزوم</th>
+                    <th>المضارع المنصوب</th>
+                    <th>المضارع المجهول</th>
+                </tr>
+
+            </table>
+
+
+
+            <ul id="maListe" class="scrollable-list">
+
+
+
+                <li class="li_class">كلمة 1</li>
+                <li class="li_class">كلمة 2</li>
+                <li class="li_class">كلمة 3</li>
+                <li class="li_class">كلمة 4</li>
+                <li class="li_class">كلمة 5</li>
+                <li class="li_class">كلمة 6</li>
+                <li class="li_class">كلمة 7</li>
+                <li class="li_class">كلمة 8</li>
+                <li class="li_class">كلمة 1</li>
+                <li class="li_class">كلمة 2</li>
+                <li class="li_class">كلمة 3</li>
+                <li class="li_class">كلمة 4</li>
+                <li class="li_class">كلمة 5</li>
+                <li class="li_class">كلمة 6</li>
+                <li class="li_class">كلمة 7</li>
+                <li class="li_class">كلمة 8</li>
+            </ul>
+        </dev>
+      </div>
+        <div class="devlistmot">
+            <h1 class="title1">قائمة الكلمات </h1>
+            <input type="number" id="search-input" placeholder="حدد المستوى الذي تبحث عن عرض كلماته..." min="0" max="17" oninvalid="setCustomValidity('يرجى إدخال قيمة صحيحة بين 1 و 17')" oninput="setCustomValidity('')" />   
+            <input type="text" id="search-input" placeholder="ابحث في هذا المستوى" />
+
+     
+
+            <table class="tablelistmot">
+            <tr>
+                <td><li>سماء</li></td>
+                <td><li>شمس</li></td>
+                <td><li>قمر</li></td>
+                <td><li>نجمة</li></td>
+              </tr>
+              <tr>
+                <td><li>بحر</li></td>
+                <td><li>جبل</li></td>
+                <td><li>غابة</li></td>
+                <td><li>صحراء</li></td>
+              </tr>
+              <tr>
+                <td><li>وردة</li></td>
+                <td><li>شجرة</li></td>
+                <td><li>عشب</li></td>
+                <td><li>زهرة</li></td>
+              </tr>
+              <tr>
+                <td><li>كتاب</li></td>
+                <td><li>مدرسة</li></td>
+                <td><li>قلم</li></td>
+                <td><li>معلم</li></td>
+              </tr>
+              <tr>
+                <td><li>فراشة</li></td>
+                <td><li>نحلة</li></td>
+                <td><li>ذبابة</li></td>
+                <td><li>عنكبوت</li></td>
+              </tr>
+              <tr>
+                <td><li>سمكة</li></td>
+                <td><li>قرش</li></td>
+                <td><li>حوت</li></td>
+                <td><li>دولفين</li></td>
+              </tr>
+              <tr>
+                <td><li>طائرة</li></td>
+                <td><li>سفينة</li></td>
+                <td><li>سيارة</li></td>
+                <td><li>قطار</li></td>
+              </tr>
+              <tr>
+                <td><li>شمعة</li></td>
+                <td><li>كعكة</li></td>
+                <td><li>حلوى</li></td>
+                <td><li>شوكولاتة</li></td>
+              </tr>
+              <tr>
+                <td><li>قهوة</li></td>
+                <td><li>شاي</li></td>
+                <td><li>عصير</li></td>
+                <td><li>ماء</li></td>
+              </tr>
+              <tr>
+                <td><li>كوب</li></td>
+                <td><li>صحن</li></td>
+                <td><li>ملعقة</li></td>
+                <td><li>شوكة</li></td>
+              </tr>
+              <tr>
+                <td><li>أمل</li></td>
+                <td><li>حب</li></td>
+                <td><li>سعادة</li></td>
+                <td><li>تحدي</li></td>
+              </tr>
+              <tr>
+                <td><li>قوة</li></td>
+                <td><li>تفاؤل</li></td>
+                <td><li>صبر</li></td>
+                <td><li>انتصار</li></td>
+              </tr>
+              <tr>
+                <td><li>حرية</li></td>
+                <td><li>عدالة</li></td>
+                <td><li>سلام</li></td>
+                <td><li>تسامح</li></td>
+              </tr>
+              <tr>
+                <td><li>معرفة</li></td>
+                <td><li>إبداع</li></td>
+                <td><li>تعليم</li></td>
+                <td><li>اكتشاف</li></td>
+              </tr>
+              <tr>
+                <td><li>صداقة</li></td>
+                <td><li>تعاون</li></td>
+                <td><li>ثقة</li></td>
+                <td><li>احترام</li></td>
+              </tr>
+              <tr>
+                <td><li>شجاعة</li></td>
+                <td><li>إصرار</li></td>
+                <td><li>تطور</li></td>
+                <td><li>تقدم</li></td>
+              </tr>
+              <tr>
+                <td><li>ذكاء</li></td>
+                <td><li>إبداع</li></td>
+                <td><li>تحصيل</li></td>
+                <td><li>تفوق</li></td>
+              </tr>
+              <tr>
+                <td><li>صحة</li></td>
+                <td><li>راحة</li></td>
+                <td><li>تغذية</li></td>
+                <td><li>نشاط</li></td>
+              </tr>
+              <tr>
+                <td><li>سفر</li></td>
+                <td><li>مغامرة</li></td>
+                <td><li>استكشاف</li></td>
+                <td><li>استجمام</li></td>
+              </tr>
+              
+              <tr>
+                <td><li>فن</li></td>
+                <td><li>موسيقى</li></td>
+                <td><li>تصوير</li></td>
+                <td><li>عرض</li></td>
+              </tr>
+              <tr>
+                <td><li>مفتاح</li></td>
+                <td><li>قفل</li></td>
+                <td><li>باب</li></td>
+                <td><li>نافذة</li></td>
+              </tr>
+           </table>
+          </div>
+          
+
+
+
+        <script src="{% static 'js/dict_prof.js' %}"></script>
+</body>
+
+</html>

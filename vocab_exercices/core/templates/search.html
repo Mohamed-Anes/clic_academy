@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block title %} Listing {% endblock title %} 
+{% block content %}
+<div>
+  <form action="{% url 'search' 0 %}" method="GET">
+    <input type="text" name="query" placeholder="Search by name" />
+    <button type="submit">Search</button>
+  </form>
+
+  <ul>
+    {% for lem in lemmes %}
+    <li>{{ lem }}</li>
+    {% empty %}
+    <li>No results found.</li>
+    {% endfor %}
+  </ul>
+
+  <ul>
+    {% for mot in mots %}
+    <li>{{ mot }}</li>
+    {% empty %}
+    <li>No results found.</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock content %}

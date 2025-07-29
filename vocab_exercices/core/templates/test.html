@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var data = { name: 'John', age: 25 };
+
+        fetch('/my_view', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+        })
+        .then(response => {
+        if (response.ok) {
+            // Handle successful response
+            console.log('JSON data sent successfully');
+        } else {
+            // Handle error response
+            console.error('Error sending JSON data');
+        }
+        })
+        .catch(error => {
+        // Handle network error
+        console.error('Network error:', error);
+        });
+
+    </script>
+
+</body>
+</html>
